@@ -1,1 +1,29 @@
+import Groq from "groq-sdk";
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
+async function AiConversation(message: string): Promise<string> {
+  try {
+    const chatResponse = await groq.chat.completions.create({
+      messages: [
+        {
+          role: "system",
+          content: "Sua tarefa é identificar a mensagem recebida como 'ofensiva' ou 'não ofensiva'. Retorne apenas essa classificação em um JSON com a chave 'classificação', garantindo que a chave seja exatamente 'classificação'.",
+        },
+        {
+          role: "user",
+          content: message,
+        }
+      ],
+      model: "llama-3.1-70b-versatile",
+    });
+
+    const content = chatResponse.choices[0]?.message?.content || "";
+    return content;
+  } catch (err) {
+    console.error("Erro ao chamar a API do Groq: ", err);
+    return "";
+  }
+}
+
+export default AiConversation;
 
