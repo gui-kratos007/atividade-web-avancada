@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
-import AiConversation from '../utils/AiAnalisys';
+import AiConversation from '../src/groq_AI';
 
 const prisma = new PrismaClient();
 
