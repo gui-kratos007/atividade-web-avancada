@@ -1,0 +1,30 @@
+{
+  "name": "aula01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "dev": "npx ts-node-dev ./src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "otaviolube",
+  "license": "GPL-3.0-or-later",
+  "description": "projeto desenvolvido em sala de aula",
+  "repository": {
+    "type": "git",
+    "url": "ainda não tem"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "axios": "^1.7.7",
+    "express": "^4.20.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "prisma": "^5.18.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
